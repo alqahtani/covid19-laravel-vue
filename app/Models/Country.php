@@ -22,4 +22,11 @@ class Country extends Model
      * @var string
      */
     protected $primaryKey = 'country';
+
+    /**
+     * The "type" of the auto-incrementing ID.
+     *
+     * @var string
+     */
+    protected $keyType = 'string';
 }

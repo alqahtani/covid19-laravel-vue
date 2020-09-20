@@ -25,14 +25,14 @@ Route::get('/', function () {
 // Show the create form for adding new country
 Route::get('countries/new', [CountryController::class, 'create']);
 
+// Show edit form for a specific country
+Route::get('countries/{country}/edit', [CountryController::class, 'edit']);
+
 // Show details about specific country
 Route::get('countries/{country}', [CountryController::class, 'show']);
 
 // Store new country
 Route::post('countries', [CountryController::class, 'store'])->name('countries.store');
 
-// Show edit form for a specific country
-Route::get('countries/{country}/edit', [CountryController::class, 'edit']);
-
 // Update a specific country with new data
-Route::put('countries/{country}', [CountryController::class, 'update']);
+Route::put('countries/{country}', [CountryController::class, 'update'])->name('countries.update');

@@ -36,17 +36,17 @@ class CountryController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'country' => 'required|unique:countries|max:255',
-            'cases' => 'required',
-            'today_cases' => 'required',
-            'deaths' => 'required',
-            'recovered' => 'required',
-            'active' => 'required',
-            'critical' => 'required',
-            'cpm' => 'required',
-            'dpm' => 'required',
-            'total_tests' => 'required',
-            'tpm' => 'required',
+            'country' => 'required|string|unique:countries|max:255',
+            'cases' => 'required|numeric',
+            'today_cases' => 'required|numeric',
+            'deaths' => 'required|numeric',
+            'recovered' => 'required|numeric',
+            'active' => 'required|numeric',
+            'critical' => 'required|numeric',
+            'cpm' => 'required|numeric',
+            'dpm' => 'required|numeric',
+            'total_tests' => 'required|numeric',
+            'tpm' => 'required|numeric',
         ]);
 
         return $request;
@@ -71,7 +71,7 @@ class CountryController extends Controller
      */
     public function edit(Country $country)
     {
-        //
+        return view('countries.edit', compact('country'));
     }
 
     /**
@@ -83,7 +83,21 @@ class CountryController extends Controller
      */
     public function update(Request $request, Country $country)
     {
-        //
+        $validatedData = $request->validate([
+            'country' => 'string|max:255',
+            'cases' => 'required|numeric',
+            'today_cases' => 'required|numeric',
+            'deaths' => 'required|numeric',
+            'recovered' => 'required|numeric',
+            'active' => 'required|numeric',
+            'critical' => 'required|numeric',
+            'cpm' => 'required|numeric',
+            'dpm' => 'required|numeric',
+            'total_tests' => 'required|numeric',
+            'tpm' => 'required|numeric',
+        ]);
+
+        return $request;
     }
 
     /**
