@@ -15,13 +15,9 @@
   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 h-screen antialiased leading-none font-sans">
-  <div class="flex flex-col">
-    <div class="min-h-screen flex items-center justify-center">
-      <div class="flex flex-col justify-around h-full">
-        {{ $slot }}
-      </div>
-    </div>
+<body class="bg-gray-100 leading-none font-sans">
+  <div class="px-10 py-10 sm:px-0 sm:w-11/12 sm:mx-auto">
+    {{ $slot }}
   </div>
 </body>
 

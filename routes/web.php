@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CountryController;
+use App\Models\Country;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,12 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $allCountries = Country::all();
+    return view('index', compact('allCountries'));
 });
 
 // Return a json of all Countries to populate the map and the table on index page
 // Update: moved to api.php
 
+Route::redirect('countries', '/');
 
 // Show the create form for adding new country
 Route::get('countries/new', [CountryController::class, 'create']);
