@@ -38,8 +38,9 @@ class CountryController extends Controller
         $validatedData = $request->validate([
             'country' => 'required|string|unique:countries|max:255',
             'cases' => 'required|numeric',
-            'today_cases' => 'required|numeric',
+            'todayCases' => 'required|numeric',
             'deaths' => 'required|numeric',
+            'todayDeaths' => 'required|numeric',
             'recovered' => 'required|numeric',
             'active' => 'required|numeric',
             'critical' => 'required|numeric',
@@ -86,8 +87,9 @@ class CountryController extends Controller
         $validatedData = $request->validate([
             'country' => 'string|max:255',
             'cases' => 'required|numeric',
-            'today_cases' => 'required|numeric',
+            'todayCases' => 'required|numeric',
             'deaths' => 'required|numeric',
+            'todayDeaths' => 'required|numeric',
             'recovered' => 'required|numeric',
             'active' => 'required|numeric',
             'critical' => 'required|numeric',
