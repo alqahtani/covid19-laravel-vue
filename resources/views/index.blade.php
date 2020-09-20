@@ -118,7 +118,14 @@
                 </td>
 
                 <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
-                  <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                  <a href="{{ route('countries.edit', $country ) }}"
+                    class="text-indigo-600 hover:text-indigo-900">Edit</a>
+
+                  <form action="{{ route('countries.delete', $country) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="text-red-500 hover:text-red-700 text-sm leading-5 font-medium">Delete</button>
+                  </form>
                 </td>
               </tr>
               @endforeach
