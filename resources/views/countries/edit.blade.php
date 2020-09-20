@@ -40,9 +40,9 @@
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                  <label for="today_cases" class="block text-sm font-medium leading-5 text-gray-700">Cases
-                    Today: <span
-                      class="text-xs text-indigo-600 bg-indigo-100 px-1 border-indigo-400 border rounded inline-block">{{ now()->format('l, d F Y') }}</span></label>
+                  <label for="today_cases" class="block text-sm font-medium leading-5 text-gray-700">Today Cases: <span
+                      class="text-xs text-indigo-600 bg-indigo-100 px-1 border-indigo-400 border rounded inline-block">as
+                      last updated on: {{ $country->updated_at->format('l, d F Y') }}</span></label>
                   <input id="today_cases" name="today_cases" type="number"
                     value="{{ old('today_cases', $country->todayCases ) }}"
                     class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 @error('today_cases') border-red-500 @enderror rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
@@ -57,6 +57,19 @@
                   <input id="deaths" name="deaths" type="number" value="{{ old('deaths', $country->deaths ) }}"
                     class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 @error('deaths') border-red-500 @enderror rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                   @error('deaths')
+                  <div class="text-xs text-red-500 py-2">{{ $message }}</div>
+                  @enderror
+                </div>
+
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="todayDeaths" class="block text-sm font-medium leading-5 text-gray-700">Today
+                    Deaths: <span
+                      class="text-xs text-indigo-600 bg-indigo-100 px-1 border-indigo-400 border rounded inline-block">as
+                      last updated on: {{ $country->updated_at->format('l, d F Y') }}</span></label>
+                  <input id="todayDeaths" name="todayDeaths" type="number"
+                    value="{{ old('todayDeaths', $country->todayDeaths ) }}"
+                    class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 @error('todayDeaths') border-red-500 @enderror rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                  @error('todayDeaths')
                   <div class="text-xs text-red-500 py-2">{{ $message }}</div>
                   @enderror
                 </div>
