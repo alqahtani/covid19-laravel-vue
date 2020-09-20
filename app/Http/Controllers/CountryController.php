@@ -95,11 +95,33 @@ class CountryController extends Controller
             'critical' => 'required|numeric',
             'cpm' => 'required|numeric',
             'dpm' => 'required|numeric',
-            'total_tests' => 'required|numeric',
+            'totalTests' => 'required|numeric',
             'tpm' => 'required|numeric',
         ]);
 
-        return $request;
+        // dd($country);
+
+        // $country->update([
+        //     'country' => $request->country,
+        //     'cases' => $request->cases,
+        //     'todayCases' => $request->todayCases,
+        //     'deaths' => $request->deaths,
+        //     'todayDeaths' => $request->todayDeaths,
+        //     'recovered' => $request->recovered,
+        //     'active' => $request->active,
+        //     'critical' => $request->critical,
+        //     'casesPerOneMillion' => $request->cpm,
+        //     'deathsPerOneMillion' => $request->dpm,
+        //     'totalTests' => $request->totalTests,
+        //     'testsPerOneMillion' => $request->tpm,
+        // ]);
+
+        $country->cases = $request->cases;
+
+        $country->save();
+
+        // return redirect()->route('countries.show', $country)->with('status', 'Country updated!');
+        return back()->with('status', 'Country updated!');
     }
 
     /**

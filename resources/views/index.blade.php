@@ -7,6 +7,33 @@
   <div class="flex flex-col">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+
+        @if (session('status'))
+        <div class="rounded-md border border-blue-400 bg-blue-50 p-4 mb-2">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <svg class="h-5 w-5 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="ml-3 flex-1 md:flex md:justify-between">
+              <p class="text-sm leading-5 text-blue-700">
+                {{ session('status') }}
+              </p>
+              <p class="mt-3 text-sm leading-5 md:mt-0 md:ml-6">
+                <a href="#"
+                  class="whitespace-no-wrap font-medium text-blue-700 hover:text-blue-600 transition ease-in-out duration-150">
+                  Details &rarr;
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        @endif
+
         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
           <table class="min-w-full divide-y divide-gray-200">
             <thead>
@@ -69,7 +96,10 @@
                     </div>
                     <div class="ml-4">
                       <div class="text-sm leading-5 font-medium text-gray-900">
-                        {{ $country->country }}
+                        <a href="{{ route('countries.show', $country ) }}"
+                          class="text-indigo-600 hover:text-indigo-900 hover:underline">
+                          {{ $country->country }}
+                        </a>
                       </div>
                       <div class="text-sm leading-5 text-gray-500">
                         All cases: {{ number_format($country->cases) }}

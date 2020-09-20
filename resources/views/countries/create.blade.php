@@ -3,6 +3,14 @@
     <div class="md:grid md:grid-cols-3 md:gap-6">
       <div class="md:col-span-1">
         <div class="px-4 sm:px-0">
+          <a href="{{ route('index') }}"
+            class="text-blue-500 text-sm mb-2 inline-block hover:text-blue-700 flex items-center">
+            <svg class="h-4 w-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z"
+                clip-rule="evenodd" />
+            </svg>
+            Home</a>
           <h3 class="text-lg font-medium leading-6 text-gray-900">Create New Country</h3>
           <p class="mt-1 text-sm leading-5 text-gray-600">
             Use this form to create a new country that is not listed.

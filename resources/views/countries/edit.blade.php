@@ -3,6 +3,14 @@
     <div class="md:grid md:grid-cols-3 md:gap-6">
       <div class="md:col-span-1">
         <div class="px-4 sm:px-0">
+          <a href="{{ route('index') }}"
+            class="text-blue-500 text-sm mb-2 inline-block hover:text-blue-700 flex items-center">
+            <svg class="h-4 w-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z"
+                clip-rule="evenodd" />
+            </svg>
+            Home</a>
           <h3 class="text-lg font-medium leading-6 text-gray-900">Edit Country</h3>
           <p class="mt-1 text-sm leading-5 text-gray-600">
             Edit the details of {{ $country->country }}.
@@ -13,6 +21,25 @@
         </div>
       </div>
       <div class="mt-5 md:mt-0 md:col-span-2">
+        @if (session('status'))
+        <div class="rounded-md border border-blue-400 bg-blue-50 p-4 mb-2">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <svg class="h-5 w-5 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="ml-3 flex-1">
+              <p class="text-sm leading-5 text-blue-700">
+                {{ session('status') }}
+              </p>
+            </div>
+          </div>
+        </div>
+        @endif
         <form action="{{ route('countries.update', $country) }}" method="POST">
           @csrf
           @method('PUT')
@@ -121,11 +148,11 @@
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                  <label for="total_tests" class="block text-sm font-medium leading-5 text-gray-700">Total Tests</label>
-                  <input id="total_tests" name="total_tests" type="number"
-                    value="{{ old('total_tests', $country->totalTests ) }}"
-                    class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 @error('total_tests') border-red-500 @enderror rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
-                  @error('total_tests')
+                  <label for="totalTests" class="block text-sm font-medium leading-5 text-gray-700">Total Tests</label>
+                  <input id="totalTests" name="totalTests" type="number"
+                    value="{{ old('totalTests', $country->totalTests ) }}"
+                    class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 @error('totalTests') border-red-500 @enderror rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                  @error('totalTests')
                   <div class="text-xs text-red-500 py-2">{{ $message }}</div>
                   @enderror
                 </div>

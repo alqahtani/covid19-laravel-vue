@@ -38,7 +38,7 @@ Route::put('countries/{country}', [CountryController::class, 'update'])->name('c
 Route::delete('countries/{country}', [CountryController::class, 'destroy'])->name('countries.delete');
 
 // Show details about specific country
-Route::get('countries/{country}', [CountryController::class, 'show']);
+Route::get('countries/{country}', [CountryController::class, 'show'])->name('countries.show');
 
 // Store new country
 Route::post('countries', [CountryController::class, 'store'])->name('countries.store');
