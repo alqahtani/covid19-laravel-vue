@@ -17,14 +17,16 @@
         </div>
         <div class="ml-3 flex-1 md:flex md:justify-between">
           <p class="text-sm leading-5 text-blue-700">
-            {{ session('status') }}
+            {!! session('status') !!}
           </p>
+          @if (session('status_link'))
           <p class="mt-3 text-sm leading-5 md:mt-0 md:ml-6">
-            <a href="#"
+            <a href="{{ session('status_link') }}"
               class="whitespace-no-wrap font-medium text-blue-700 hover:text-blue-600 transition ease-in-out duration-150">
               Details &rarr;
             </a>
           </p>
+          @endif
         </div>
       </div>
     </div>

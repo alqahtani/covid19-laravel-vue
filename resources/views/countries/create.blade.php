@@ -25,9 +25,9 @@
               <div class="grid grid-cols-6 gap-6">
 
                 <div class="col-span-6 sm:col-span-3">
-                  <label for="country_name" class="block text-sm font-medium leading-5 text-gray-700">Country
+                  <label for="country" class="block text-sm font-medium leading-5 text-gray-700">Country
                     Name</label>
-                  <input id="country_name" name="country" value="{{ old('country') }}"
+                  <input id="country" name="country" value="{{ old('country') }}"
                     class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 @error('country') border-red-500 @enderror rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                   @error('country')
                   <div class="text-xs text-red-500 py-2">{{ $message }}</div>
@@ -120,10 +120,10 @@
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                  <label for="total_tests" class="block text-sm font-medium leading-5 text-gray-700">Total Tests</label>
-                  <input id="total_tests" name="total_tests" type="number" value="{{ old('total_tests') }}"
-                    class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 @error('total_tests') border-red-500 @enderror rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
-                  @error('total_tests')
+                  <label for="totalTests" class="block text-sm font-medium leading-5 text-gray-700">Total Tests</label>
+                  <input id="totalTests" name="totalTests" type="number" value="{{ old('totalTests') }}"
+                    class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 @error('totalTests') border-red-500 @enderror rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                  @error('totalTests')
                   <div class="text-xs text-red-500 py-2">{{ $message }}</div>
                   @enderror
                 </div>

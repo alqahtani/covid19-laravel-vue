@@ -46,11 +46,31 @@ class CountryController extends Controller
             'critical' => 'required|numeric',
             'cpm' => 'required|numeric',
             'dpm' => 'required|numeric',
-            'total_tests' => 'required|numeric',
+            'totalTests' => 'required|numeric',
             'tpm' => 'required|numeric',
         ]);
 
-        return $request;
+        Country::create([
+            'country' => $request->country,
+            'cases' => $request->cases,
+            'todayCases' => $request->todayCases,
+            'deaths' => $request->deaths,
+            'todayDeaths' => $request->todayDeaths,
+            'recovered' => $request->recovered,
+            'active' => $request->active,
+            'critical' => $request->critical,
+            'casesPerOneMillion' => $request->cpm,
+            'deathsPerOneMillion' => $request->dpm,
+            'totalTests' => $request->totalTests,
+            'testsPerOneMillion' => $request->tpm,
+        ]);
+
+        $sessionMessage = 'Country <span class="font-bold">' . $request->country . '</span> has been created successfully!';
+        $sessionLink = url('/countries/' . $request->country);
+        return redirect()->route('index')->with([
+            'status' => $sessionMessage,
+            'status_link' => $sessionLink
+        ]);
     }
 
     /**
@@ -99,8 +119,6 @@ class CountryController extends Controller
             'tpm' => 'required|numeric',
         ]);
 
-        // dd($country);
-
         $country->update([
             'cases' => $request->cases,
             'todayCases' => $request->todayCases,
@@ -114,10 +132,6 @@ class CountryController extends Controller
             'totalTests' => $request->totalTests,
             'testsPerOneMillion' => $request->tpm,
         ]);
-
-        // $country->cases = $request->cases;
-
-        // $country->save();
 
         return back()->with('status', 'Country updated!');
     }
