@@ -119,7 +119,7 @@ class FilldataController extends Controller
                         $country->testsPerOneMillion = $newCountry->testsPerOneMillion;
 
                         // // get the extra data for the new country
-                        // $countryExtrasRequest = Http::get('https://restcountries.eu/rest/v2/name/' . $countryName);
+                        // $countryExtrasRequest = Http::get('https://restcountries.eu/rest/v2/name/' . $countryName . '?fullText=true');
                         // $countryExtraInfo = $countryExtrasRequest->json();
 
                         // if ($countryExtrasRequest->status() == 200) {

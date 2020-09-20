@@ -1,9 +1,8 @@
 <x-layouts.app>
-  <div class="sm:h-full p-10 sm:px-0 sm:w-11/12 sm:mx-auto">
-    <div class="mb-6">
-      <div class="bg-gray-300 flex items-center justify-center" style="height: 450px">
-        <h1>Map</h1>
-      </div>
+  <div id="app" class="sm:h-full sm:px-0 sm:w-11/12 sm:mx-auto">
+    <div class="">
+      <map-component :allCountries="@json($allCountries)" />
+
     </div>
     <div class="flex flex-col">
       @if (session('status'))

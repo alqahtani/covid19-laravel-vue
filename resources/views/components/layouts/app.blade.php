@@ -17,6 +17,8 @@
 
 <body class="bg-gray-100 h-screen leading-none font-sans">
   {{ $slot }}
+
+  <script src="{{ mix('js/app.js')}}"></script>
 </body>
 
 </html>
