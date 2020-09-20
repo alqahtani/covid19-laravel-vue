@@ -5,35 +5,43 @@
     </div>
   </div>
   <div class="flex flex-col">
+    @if (session('status'))
+    <div class="rounded-md border border-blue-400 bg-blue-50 p-4 mb-2">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <svg class="h-5 w-5 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z"
+              clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="ml-3 flex-1 md:flex md:justify-between">
+          <p class="text-sm leading-5 text-blue-700">
+            {{ session('status') }}
+          </p>
+          <p class="mt-3 text-sm leading-5 md:mt-0 md:ml-6">
+            <a href="#"
+              class="whitespace-no-wrap font-medium text-blue-700 hover:text-blue-600 transition ease-in-out duration-150">
+              Details &rarr;
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    @endif
+
+    <div class="flex flex-row-reverse pb-4">
+      <a href="{{ route('countries.new') }}"
+        class="text-blue-500 mb-2 inline-block hover:text-blue-700 flex items-center">
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd"
+            d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z"
+            clip-rule="evenodd" />
+        </svg>
+        Add New Country</a>
+    </div>
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-
-        @if (session('status'))
-        <div class="rounded-md border border-blue-400 bg-blue-50 p-4 mb-2">
-          <div class="flex">
-            <div class="flex-shrink-0">
-              <svg class="h-5 w-5 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z"
-                  clip-rule="evenodd" />
-              </svg>
-            </div>
-            <div class="ml-3 flex-1 md:flex md:justify-between">
-              <p class="text-sm leading-5 text-blue-700">
-                {{ session('status') }}
-              </p>
-              <p class="mt-3 text-sm leading-5 md:mt-0 md:ml-6">
-                <a href="#"
-                  class="whitespace-no-wrap font-medium text-blue-700 hover:text-blue-600 transition ease-in-out duration-150">
-                  Details &rarr;
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-        @endif
-
         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
           <table class="min-w-full divide-y divide-gray-200">
             <thead>

@@ -26,7 +26,7 @@ Route::get('/', function () {
 Route::redirect('countries', '/');
 
 // Show the create form for adding new country
-Route::get('countries/new', [CountryController::class, 'create']);
+Route::get('countries/new', [CountryController::class, 'create'])->name('countries.new');
 
 // Show edit form for a specific country
 Route::get('countries/{country}/edit', [CountryController::class, 'edit'])->name('countries.edit');
