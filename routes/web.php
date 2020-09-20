@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $allCountries = Country::all();
+    $allCountries = Country::orderBy('cases', 'desc')->get();
     return view('index', compact('allCountries'));
 })->name('index');
 

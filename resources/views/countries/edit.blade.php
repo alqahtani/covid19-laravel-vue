@@ -18,6 +18,9 @@
           <p>
             <img src="{{ $country->flag }}" class="mt-2 h-8" />
           </p>
+          <p class="mt-2 text-xs leading-5 text-gray-400">
+            Updated: {{ $country->updated_at->diffForHumans() }}
+          </p>
         </div>
       </div>
       <div class="mt-5 md:mt-0 md:col-span-2">

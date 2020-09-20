@@ -112,6 +112,9 @@
                       <div class="text-sm leading-5 text-gray-500">
                         All cases: {{ number_format($country->cases) }}
                       </div>
+                      <div class="text-xs leading-5 text-gray-400">
+                        Updated: {{ $country->updated_at->diffForHumans() }}
+                      </div>
                     </div>
                   </div>
                 </td>
