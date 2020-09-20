@@ -72,49 +72,49 @@
                         {{ $country->country }}
                       </div>
                       <div class="text-sm leading-5 text-gray-500">
-                        All cases: {{ $country->cases }}
+                        All cases: {{ number_format($country->cases) }}
                       </div>
                     </div>
                   </div>
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="text-sm leading-5 text-gray-900">{{ $country->todayCases }}</div>
+                  <div class="text-sm leading-5 text-gray-900">{{ number_format($country->todayCases) }}</div>
                 </td>
 
                 <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="text-sm leading-5 text-gray-900">{{ $country->deaths }}</div>
+                  <div class="text-sm leading-5 text-gray-900">{{ number_format($country->deaths) }}</div>
                 </td>
 
                 <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="text-sm leading-5 text-gray-900">{{ $country->todayDeaths }}</div>
+                  <div class="text-sm leading-5 text-gray-900">{{ number_format($country->todayDeaths) }}</div>
                 </td>
 
                 <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="text-sm leading-5 text-gray-900">{{ $country->recovered }}</div>
+                  <div class="text-sm leading-5 text-gray-900">{{ number_format($country->recovered) }}</div>
                 </td>
 
                 <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="text-sm leading-5 text-gray-900">{{ $country->active }}</div>
+                  <div class="text-sm leading-5 text-gray-900">{{ number_format($country->active) }}</div>
                 </td>
 
                 <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="text-sm leading-5 text-gray-900">{{ $country->critical }}</div>
+                  <div class="text-sm leading-5 text-gray-900">{{ number_format($country->critical) }}</div>
                 </td>
 
                 <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="text-sm leading-5 text-gray-900">{{ $country->casesPerOneMillion }}</div>
+                  <div class="text-sm leading-5 text-gray-900">{{ number_format($country->casesPerOneMillion) }}</div>
                 </td>
 
                 <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="text-sm leading-5 text-gray-900">{{ $country->deathsPerOneMillion }}</div>
+                  <div class="text-sm leading-5 text-gray-900">{{ number_format($country->deathsPerOneMillion) }}</div>
                 </td>
 
                 <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="text-sm leading-5 text-gray-900">{{ $country->totalTests }}</div>
+                  <div class="text-sm leading-5 text-gray-900">{{ number_format($country->totalTests) }}</div>
                 </td>
 
                 <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="text-sm leading-5 text-gray-900">{{ $country->testsPerOneMillion }}</div>
+                  <div class="text-sm leading-5 text-gray-900">{{ number_format($country->testsPerOneMillion) }}</div>
                 </td>
 
                 <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
