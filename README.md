@@ -34,7 +34,7 @@ https://coronavirus-19-api.herokuapp.com/countries
 10. on another terminal run this command to process **queue jobs** as they dispatched.
 
 
-## Using the app
+## App running and usage
 
 1. head to http://127.0.0.1:8000
 2. the glope map will appear and there is no data yet
@@ -42,6 +42,15 @@ https://coronavirus-19-api.herokuapp.com/countries
 4. now the application is filling the database with data coming from the API using Laravle queues. you can refresh the page and you'll see the countries as they added to DB.
 5. I you want to update the DB data again you can simply click **update DB**
 
+## Technologies used
+
+* Laravel 8
+* Vue 2
+* Data: stats from the provided API: [https://coronavirus-19-api.herokuapp.com/countries]
+* Data: countries info (latitude, longitude, flag) from this API: [https://restcountries.eu/]
+* Tailwindcss and TailwindUI: [https://tailwindcss.com/]
+* Vue Data Maps: [https://github.com/Seungwoo321/vue-datamaps]
+* Vue Spinner: [http://greyby.github.io/vue-spinner/]
 
 ## Screenshots
 
