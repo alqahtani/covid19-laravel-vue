@@ -27,4 +27,27 @@ https://coronavirus-19-api.herokuapp.com/countries
 3. install the dependencies using **composer**: `composer install`
 4. install the node packages needed: `npm install`
 5. create a mysql database with name "covid19_laravel_vue"
-6. run this **php artisan** command to generate a key for the app: `php artisan key:generate`
+6. copy the **.env.example** with name **.env** here is the command: `cp .env.example .env`
+7. run this **php artisan** command to generate a key for the app: `php artisan key:generate`
+8. run the migration: `php artisan migrate`
+9. serve the app using this command: `php artisan serve`
+10. on another terminal run this command to process **queue jobs** as they dispatched.
+
+
+## Using the app
+
+1. head to http://127.0.0.1:8000
+2. the glope map will appear and there is no data yet
+3. press on **update DB** button above the table headers on the left (Make sure that you run **step 10** on installation)
+4. now the application is filling the database with data coming from the API using Laravle queues. you can refresh the page and you'll see the countries as they added to DB.
+5. I you want to update the DB data again you can simply click **update DB**
+
+
+## Screenshots
+
+![](https://github.com/alqahtani/covid19-laravel-vue/blob/master/public/imgs/1.png)
+![](https://github.com/alqahtani/covid19-laravel-vue/blob/master/public/imgs/2.png)
+![](https://github.com/alqahtani/covid19-laravel-vue/blob/master/public/imgs/3.png)
+![](https://github.com/alqahtani/covid19-laravel-vue/blob/master/public/imgs/4.png)
+![](https://github.com/alqahtani/covid19-laravel-vue/blob/master/public/imgs/5.png)
+
