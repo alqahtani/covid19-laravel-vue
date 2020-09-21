@@ -18,3 +18,13 @@ https://coronavirus-19-api.herokuapp.com/countries
 
 4. Feel free to use any template or native bootstrap
 5. Mandatory tech-stack: [Laravel](https://laravel.com/) & [vuejs](https://vuejs.org/)
+
+
+## Installation
+
+1. clone this repo to your local machine: `git clone git@github.com:alqahtani/covid19-laravel-vue.git`
+2. change directory to the project: `cd covid19-laravel-vue`
+3. install the dependencies using **composer**: `composer install`
+4. install the node packages needed: `npm install`
+5. create a mysql database with name "covid19_laravel_vue"
+6. run this **php artisan** command to generate a key for the app: `php artisan key:generate`
