@@ -26,6 +26,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "vue-datamaps": "^0.2.85"
+        "vue-datamaps": "^0.2.85",
+        "vue-spinner": "^1.0.4"
     }
 }

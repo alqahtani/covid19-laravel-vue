@@ -24,6 +24,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('map-component', require('./components/MapComponent.vue').default);
+Vue.component('update-button', require('./components/UpdateButton.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
