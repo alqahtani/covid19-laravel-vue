@@ -38,9 +38,9 @@ https://coronavirus-19-api.herokuapp.com/countries
 
 1. head to http://127.0.0.1:8000
 2. the glope map will appear and there is no data yet
-3. press on **update DB** button above the table headers on the left (Make sure that you run **step 10** on installation)
+3. press on **update DB** button above the table headers on the right (Make sure that you run **step 10** on installation)
 4. now the application is filling the database with data coming from the API using Laravle queues. you can refresh the page and you'll see the countries as they added to DB.
-5. I you want to update the DB data again you can simply click **update DB**
+5. If you want to update the DB data again you can simply click **update DB**
 
 ## Technologies used
 
