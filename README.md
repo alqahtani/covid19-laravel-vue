@@ -50,4 +50,5 @@ https://coronavirus-19-api.herokuapp.com/countries
 ![](https://github.com/alqahtani/covid19-laravel-vue/blob/master/public/imgs/3.png)
 ![](https://github.com/alqahtani/covid19-laravel-vue/blob/master/public/imgs/4.png)
 ![](https://github.com/alqahtani/covid19-laravel-vue/blob/master/public/imgs/5.png)
+![](https://github.com/alqahtani/covid19-laravel-vue/blob/master/public/imgs/6.png)
 
