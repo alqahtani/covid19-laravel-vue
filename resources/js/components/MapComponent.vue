@@ -8,6 +8,8 @@
       bubbles
     >
       <div slot="hoverBubbleInfo" class="hoverinfo" style="text-align:center;">
+        <b>{{ popupData.country }}</b>
+        <br />
         <b>Cases</b>
         : {{ popupData.cases }}
         <br />
@@ -28,10 +30,27 @@
 <script>
 import { VueDatamaps } from "vue-datamaps";
 export default {
+  mounted() {
+    axios.get("api/countries/all").then(({ data }) => {
+      data.forEach((country) => {
+        this.bubblesConfig.data.push({
+          country: country.country,
+          active: country.active,
+          cases: country.cases,
+          deaths: country.deaths,
+          recovered: country.recovered,
+          latitude: country.lat,
+          longitude: country.lng,
+          radius:
+            country.cases / 200000 < 5 ? 5 : parseInt(country.cases / 200000),
+          fillKey: "Blue",
+        });
+      });
+    });
+  },
   components: {
     VueDatamaps,
   },
-  props: ["allCountries"],
   data() {
     return {
       geographyConfig: {
@@ -44,17 +63,10 @@ export default {
       },
       bubblesConfig: {
         popupTemplate: true,
-        data: [
-          {
-            radius: 25,
-            cases: 15000,
-            fillKey: "Blue",
-            latitude: 20,
-            longitude: 77,
-          },
-        ],
+        data: [],
       },
       popupData: {
+        country: "",
         cases: "",
         active: "",
         deaths: "",
@@ -65,6 +77,7 @@ export default {
   methods: {
     popupTemplate({ datum }) {
       this.popupData = {
+        country: datum.country,
         cases: datum.cases,
         active: datum.active,
         deaths: datum.deaths,

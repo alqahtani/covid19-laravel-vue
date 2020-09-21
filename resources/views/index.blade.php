@@ -1,7 +1,7 @@
 <x-layouts.app>
   <div id="app" class="sm:h-full sm:px-0 sm:w-11/12 sm:mx-auto">
     <div class="">
-      <map-component :allCountries="@json($allCountries)" />
+      <map-component />
 
     </div>
     <div class="flex flex-col">

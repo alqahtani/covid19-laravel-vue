@@ -1936,12 +1936,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get("api/countries/all").then(function (_ref) {
+      var data = _ref.data;
+      data.forEach(function (country) {
+        _this.bubblesConfig.data.push({
+          country: country.country,
+          active: country.active,
+          cases: country.cases,
+          deaths: country.deaths,
+          recovered: country.recovered,
+          latitude: country.lat,
+          longitude: country.lng,
+          radius: country.cases / 200000 < 5 ? 5 : parseInt(country.cases / 200000),
+          fillKey: "Blue"
+        });
+      });
+    });
+  },
   components: {
     VueDatamaps: vue_datamaps__WEBPACK_IMPORTED_MODULE_0__["VueDatamaps"]
   },
-  props: ["allCountries"],
   data: function data() {
     return {
       geographyConfig: {
@@ -1954,15 +1975,10 @@ __webpack_require__.r(__webpack_exports__);
       },
       bubblesConfig: {
         popupTemplate: true,
-        data: [{
-          radius: 25,
-          cases: 15000,
-          fillKey: "Blue",
-          latitude: 20,
-          longitude: 77
-        }]
+        data: []
       },
       popupData: {
+        country: "",
         cases: "",
         active: "",
         deaths: "",
@@ -1971,9 +1987,10 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    popupTemplate: function popupTemplate(_ref) {
-      var datum = _ref.datum;
+    popupTemplate: function popupTemplate(_ref2) {
+      var datum = _ref2.datum;
       this.popupData = {
+        country: datum.country,
         cases: datum.cases,
         active: datum.active,
         deaths: datum.deaths,
@@ -38894,6 +38911,10 @@ var render = function() {
               slot: "hoverBubbleInfo"
             },
             [
+              _c("b", [_vm._v(_vm._s(_vm.popupData.country))]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
               _c("b", [_vm._v("Cases")]),
               _vm._v("\n      : " + _vm._s(_vm.popupData.cases) + "\n      "),
               _c("br"),
